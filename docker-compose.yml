@@ -1,0 +1,11 @@
+version: '1'
+services:
+  rest-app:
+    build: .
+    ports:
+      - 3000:3000
+    healthcheck:
+      test: ["CMD", "curl -f http://localhost:3000/"]
+      interval: 60s
+      timeout: 5s
+      retries: 3
